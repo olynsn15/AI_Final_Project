@@ -10,7 +10,7 @@ def detect_objects(image, confidence):
     annotated_image = image.copy()
     detected_objects = []
     for result in results:
-        for box in result.boxes.xyxy.tolist():  # Get bounding box coordinates
+        for box in result.boxes.xyxy.tolist():  
             class_id = int(result.boxes.cls.tolist()[0])
             class_name = result.names[class_id]
             confidence_score = float(result.boxes.conf.tolist()[0])
