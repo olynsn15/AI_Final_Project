@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocify</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+        p {
+            color: #666;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #1bc109af;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #1aff00d5;
+        }
+        #webcam-feed {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grocify</h1>
+    <p>Click the button below to start tracking your item stocks with grocify!</p>
+
+    <button onclick="startWebcam()">Start Camera</button>
+
+    <button onclick="stopWebcam()">Stop Camera</button>
+
+    <div id="webcam-feed">
+        <img id="webcam" src="" alt="Webcam feed" />
+    </div>
+
+    <script>
+        function startWebcam() {
+            fetch('/start_webcam', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.status);
+                    document.getElementById('webcam').src = '/video_feed';
+                })
+                .catch(error => console.error('Error starting webcam:', error));
+        }
+
+        function stopWebcam() {
+            fetch('/stop_webcam', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.status);
+                    document.getElementById('webcam').src = '';
+                })
+                .catch(error => console.error('Error stopping webcam:', error));
+        }
+    </script>
+</body>
+</html>
