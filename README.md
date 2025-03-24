@@ -5,7 +5,7 @@ Grocify is an AI-powered shopping assistant designed to help users make smarter 
 
 - Made using YOLOv11 that is trained on a custom groceries dataset (Credits : https://universe.roboflow.com/ingredients-wzqqk/ingredients-ctbug)
 - Equipped with webcam integration
-- Web integration using HTML
+- HTML integration using Flask framework
 - UI made using gradio
 
 
