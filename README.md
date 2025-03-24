@@ -9,6 +9,7 @@ Grocify is an AI-powered shopping assistant designed to help users make smarter 
 - UI made using **gradio**
 
 
+
 ## Roboflow Project Link ‎꜀( ꜆-ࡇ-)꜆ ᶻ 𝗓 𐰁 
 https://universe.roboflow.com/lyn15/ai_grocify 
 
@@ -17,6 +18,7 @@ https://universe.roboflow.com/lyn15/ai_grocify
 **Precision : 71.3%**
 
 **Recall : 54.4%**
+
 
 ## Made using
 ![Flask](https://img.shields.io/badge/Flask-000?logo=flask&logoColor=fff)
